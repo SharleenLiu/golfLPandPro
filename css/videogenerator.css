@@ -1,0 +1,155 @@
+/* ******************** ------------------------- VIDEO GENERATOR STYLES ------------------------- ******************** */
+.vidContainer {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	z-index: -1;
+	}
+
+.vidContainer .videoLayer {
+	opacity: 0;
+	position: relative;
+	
+	-webkit-transition: opacity .4s ease 0s;
+	-moz-transition:    opacity .4s ease 0s;
+	-ms-transition:     opacity .4s ease 0s;
+	-o-transition:      opacity .4s ease 0s;
+	}
+	
+.vidContainer .video {
+	overflow: hidden;
+	position: relative;
+	z-index: 2;
+	}
+	
+
+/* percentage based video modifier */
+.vidContainer.percentage .videoLayer {
+	width: 100%;
+	height: 100%;
+	}
+	
+.vidContainer.percentage .video {
+	width: 100%;
+	height: 93%;
+	}
+	
+.vidContainer.percentage.hideCustomControls .video {
+	width: 100%;
+	height: 100%;
+	}
+	
+
+/* pixel based video modifier */
+.vidContainer.pixels .videoLayer {
+	display: inline-block;
+	}
+
+
+/* controls */
+.vidContainer .videoControls {
+	display: block;
+	height: 7%;
+	opacity: 0;
+	position: relative;
+	z-index: 1;
+	
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	-o-transform: translateY(100%);
+	
+	-webkit-transition: all .4s ease .2s;
+	-moz-transition:    all .4s ease .2s;
+	-ms-transition:     all .4s ease .2s;
+	-o-transition:      all .4s ease .2s;
+	}
+	
+.vidContainer.hideCustomControls .videoControls {
+	display: none;
+	}
+	
+.vidContainer .closeVideo {
+	background: rgb(102,102,102); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY2NjY2NiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxMjEyMTIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, rgba(102,102,102,1) 0%, rgba(18,18,18,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(102,102,102,1)), color-stop(100%,rgba(18,18,18,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(102,102,102,1) 0%,rgba(18,18,18,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(102,102,102,1) 0%,rgba(18,18,18,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(102,102,102,1) 0%,rgba(18,18,18,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(102,102,102,1) 0%,rgba(18,18,18,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#121212',GradientType=0 ); /* IE6-8 */
+
+	border-radius: 20% 20% 0 0;
+	color: #fff;
+	cursor: pointer;
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	font-weight: bold;
+	line-height: 1.8em;
+	width: 2em;
+	height: 2em;
+	text-align: center;
+
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	z-index: 2;
+	}
+	
+.playVideo {
+	background: #111;
+	border-radius: 5%;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1em;
+	padding: 2em;
+	
+	zoom: 1;
+	*display: inline; /*IE7 fix*/
+	}
+	
+
+
+/* ----- VIDEO EVENT MODIFIERS ----- */
+/* js class applied to override base styles */
+.vidContainer.showVideo { 
+	z-index: 1; 
+	}
+	
+.vidContainer.showVideo .videoLayer { 
+	opacity: 1;
+	}
+	
+.vidContainer.showVideo .videoControls {
+	opacity: 1;
+	
+	-webkit-transform: translateY(0%);
+	-moz-transform: translateY(0%);
+	-ms-transform: translateY(0%);
+	-o-transform: translateY(0%);
+	}
+
+
+
+
+
+/* ----- MEDIA QUERIES ----- */
+@media screen and (max-width: 1100px), screen and (max-height: 900px) {
+	.vidContainer .closeVideo { font-size: 90%; }	
+}
+@media screen and (max-width: 840px), screen and (max-height: 700px) {
+	.vidContainer .closeVideo { font-size: 75%; }	
+}
+@media screen and (max-width: 675px), screen and (max-height: 540px) {
+	.vidContainer .closeVideo { font-size: 60%; }	
+}
+
+	
+

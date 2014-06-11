@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" /> 
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" /> 
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />	
+	<title>Video Generator Plugin demo</title>   
+    <script src="js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<style type="text/css">
+	#videoDIV1 {
+		height: 50%;
+		width: 50%;
+		position: absolute;
+		top: 0%;
+		left: 0%;
+		}
+		
+	.videoDIV2 {
+		height: 50%;
+		width: 50%;
+		position: absolute;
+		top: 0%;
+		right: 0%;
+		}
+		
+	#playDIV1 {
+		position: absolute;
+		top: 55%;
+		left: 23%;
+		}
+		
+	.playDIV2 {
+		position: absolute;
+		top: 55%;
+		right: 23%;
+		}
+		
+	#play-videooooooos {
+		position: absolute;
+		bottom: 0%;
+		left: 47%;
+		}
+</style>
+<div id="videoDIV1"></div>
+<div id="playDIV1"></div>
+<div class="videoDIV2"></div>
+<div class="playDIV2"></div>
+<script src="js/videogenerator.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+		// youtube player
+		jQuery('#videoDIV1').generateVideo({ 
+			id: "awwwwwww",
+			type: "youtube",
+			filename: "ryxC6UDtcbQ",
+			visibleOnLoad: true,
+			autostart: false,
+			autopause: true,
+			playTarget: "#playDIV1",
+			theme: "light",
+			progresscolor: "white",
+			trackProjectName: "VideoEverywhere",
+			modal: false,
+			showLogs: true,
+			onVideoReady: function() {
+				jQuery('body').append('<div id="callbackShowcase" style="position:fixed; top:0em; left:0em; padding:2em; background:#ccc; z-index:100000; font-size:1em; color:#000;" />');
+			},
+			onVideoPause: function() {
+				alert('You paused me');
+			},
+			onVideoTime: function(position, duration) {
+				jQuery('#callbackShowcase').html('YT: position: ' + position + ', duration: ' + duration);
+			}
+		});
+		
+		// jw player
+		jQuery('.videoDIV2').generateVideo({ 
+			id: "yeahhhhhhh",
+			filename: "videos/test.mp4",
+			visibleOnLoad: true,
+			autostart: true,
+			autopause: true,
+			repeat: true,
+			playTarget: ".playDIV2",
+			width: "100%",
+			height: "100%",
+			onPlayButtonPress: function(element, vidID) {
+				alert('You pressed play.\nCheck out the console to see logged element and vidID.');
+				console.log(element);
+				console.log(vidID);
+			},
+			onCloseButtonPress: function(element, vidID) {
+				alert('You pressed close.\nCheck out the console to see logged element and vidID.');
+				console.log(element);
+				console.log(vidID);
+			}
+		});
+		
+		// modal window
+		jQuery('body').generateVideo({ 
+		    id: "videooooooos",
+		    filename: "videos/AD19715_Su14_Polo_Golf_Banner_Ad_10s_640x480_V.04.mp4",
+			visibleOnLoad: false,
+			autostart: true,
+			autopause: true,
+			autoclose: true,
+			playTarget: "body",			
+			modal: true,
+			modalWidth: "80%",
+			modalHeight: "80%"
+		});
+	});
+</script>
+</body>
+</html>
